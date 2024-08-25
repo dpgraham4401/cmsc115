@@ -1,4 +1,4 @@
-package com.vimpirate;
+package com.vimpirate.week2;
 
 import java.util.Scanner;
 
