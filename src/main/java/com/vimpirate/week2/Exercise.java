@@ -4,14 +4,20 @@ import java.util.Scanner;
 
 public class Exercise {
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the subtotal and a gratuity rate: ");
 
-        double subTotal = scanner.nextDouble();
-        double gratuityRate = scanner.nextDouble() / 100;
-        double gratuity = subTotal * gratuityRate;
+        System.out.println("Enter investment amount: ");
+        double investment = scanner.nextDouble();
 
-        System.out.println("The gratuity is " + gratuity + " and total is " + (subTotal + gratuity));
+        System.out.println("Enter annual interest rate in percentage: ");
+        double interestRate = scanner.nextDouble();
+
+        System.out.println("Enter number of years:  ");
+        double years = scanner.nextDouble();
+
+        double futureInvestmentValue = investment * Math.pow(1 + interestRate / 1200, years * 12);
+        System.out.printf("Accumulated value is $%.2f", futureInvestmentValue);
     }
 }
