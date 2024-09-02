@@ -28,12 +28,11 @@ public class BiasedGrade {
     /**
      * Get the student's grade based on their name
      *
-     * @NestedIfStatement
-     * The nested if statement is used to evaluate conditions that are dependent on
-     * each other (not the perfect example here). We only want to check if the student's name
-     * is David Graham if we know that the name is not empty.
      * @param studentName the student's name
      * @return int the student's grade
+     * @NestedIfStatement The nested if statement is used to evaluate conditions that are dependent on
+     * each other (not the perfect example here). We only want to check if the student's name
+     * is David Graham if we know that the name is not empty.
      */
     public int getStudentGrade(String studentName) {
         int grade = 0;
@@ -49,12 +48,11 @@ public class BiasedGrade {
     /**
      * Based on the letter grade, return the teacher's (harsh) evaluation
      *
-     * @SwitchStatement
-     * The switch statement is great for when we have (several) discrete values
-     * that the variable will match. It doesn't git well when we need to evaluate (for example)
+     * @Switch A switch statement (or expression in this example) is great for when we have (several) discrete values
+     * that the variable will match. It's not the optimal choice when we need to evaluate (for example)
      * if the grade was between two values.
-     * @param letterGrade the letter grade
-     * @return String the teacher's opinion
+     * Note: here we are using a switch expression which as proposed in JEP 325. I've implemented the same
+     * as a "switch statement" in another method for the sake of completeness
      */
     public String getTeacherEvaluation(String letterGrade) {
         String evaluation = "";
@@ -73,13 +71,12 @@ public class BiasedGrade {
     /**
      * Get the letter grade (String) based on the score (int)
      *
-     * @MultiWayIfStatement
-     * This function uses a multi-way if statement to evaluate the score
+     * @param score the integer score of the test
+     * @return String the letter grade
+     * @MultiWayIfStatement This function uses a multi-way if statement to evaluate the score
      * a student received on a test.
      * The if statement allows us to evaluation an expression
      * (for example evaluate whether the values is between 90 and 100).
-     * @param score the integer score of the test
-     * @return String the letter grade
      */
     public String getLetterGrade(int score) {
         String letterGrade = "";
@@ -99,4 +96,37 @@ public class BiasedGrade {
         return letterGrade;
     }
 
+    /**
+     * Get the teacher's evaluation based on the student's letter grade
+     * <p>
+     * This method is here just to show the switch statement version of our getTeacherEvaluation method.
+     * It is functionally equivalent, note the inclusion of the break statement in each case.
+     */
+    private String getTeachEvaluationWithSwitchStatement(String letterGrade) {
+        String evaluation = "";
+        switch (letterGrade) {
+            case "A+":
+                evaluation = "Wow! You're a genius, and really good at kung fu!";
+                break;
+            case "A":
+                evaluation = "Awesome! keep up the good work!";
+                break;
+            case "B":
+                evaluation = "2nd place? that's a fancy word for loosing";
+                break;
+            case "C":
+                evaluation = "well, at least you didn't fail";
+                break;
+            case "D":
+                evaluation = "Don't quit your day job";
+                break;
+            case "F":
+                evaluation = "... you tried";
+                break;
+            default:
+                evaluation = "you miss 100% of the shots you don't take, next time take the test";
+                break;
+        }
+        return evaluation;
+    }
 }
