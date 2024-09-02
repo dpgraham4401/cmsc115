@@ -30,12 +30,12 @@ public class Calculator {
                 if (secondNumber != 0) {
                     result = firstNumber / secondNumber;
                 } else {
-                    System.out.println("Cannot divide by zero");
+                    System.out.println("Cannot divide by zero.");
                     return;
                 }
                 break;
             default:
-                System.out.println("Invalid operation");
+                System.out.println("Invalid operation selected.");
                 return;
         }
 
