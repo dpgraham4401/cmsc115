@@ -52,6 +52,9 @@ public class NumberOfDays {
         };
     }
 
+    /**
+     * A really poor way to get the month name from the month number (think about using an array or map)
+     */
     private static String getMonthName(int monthNumber) {
         return switch (monthNumber) {
             case 1 -> "January";
