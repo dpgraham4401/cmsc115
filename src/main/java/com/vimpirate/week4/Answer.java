@@ -2,10 +2,11 @@ package com.vimpirate.week4;
 
 public class Answer {
     public static void main(String[] args) {
-        String formattedMessage;
-        String message = "Hello World!";
+        String siteAddress = "www.example.com";
+        String resourcePath = "contact";
+        boolean isSecure = false;
 
-        formattedMessage = message.length() + " " + message;
-        System.out.println(formattedMessage);
+        String url = (isSecure ? "https://" : "http://") + siteAddress + (resourcePath.startsWith("/") ? resourcePath : "/" + resourcePath);
+        System.out.println(url);
     }
 }
