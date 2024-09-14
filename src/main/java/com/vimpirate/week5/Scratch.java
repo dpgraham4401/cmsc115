@@ -10,14 +10,21 @@ import java.util.Scanner;
 public class Scratch {
 
     public static void main(String[] args) {
-        Scanner stdin = new Scanner(System.in);
-        int input = 0;
-        int greatest = 0;
-        while (input >= 0) {
-            input = stdin.nextInt();
-            if (input > greatest)
-                greatest = input;
+        Scanner input = new Scanner(System.in);
+        int sum = 0;
+        StringBuilder textEntries = new StringBuilder();
+
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
+            try {
+                int number = Integer.parseInt(line);
+                sum += number;
+            } catch (NumberFormatException e) {
+                textEntries.append(line);
+            }
         }
-        System.out.println(greatest);
+
+        System.out.println(sum + "," + textEntries.toString());
     }
+
 }
