@@ -8,11 +8,9 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int n = 50; // Example value for n, you can change it as needed
-
-        for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0 && i % 10 == 1) {
-                System.out.println(i);
+        for (int i = 300; i >= 150; i--) {
+            if (i % 3 == 0) {
+                System.out.printf("%d ", i);
             }
         }
 
