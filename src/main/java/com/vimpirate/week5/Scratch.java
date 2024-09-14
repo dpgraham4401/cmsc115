@@ -11,13 +11,13 @@ public class Scratch {
 
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
-        int input;
-        int sum = 0;
-        while (sum < 100) {
+        int input = 0;
+        int greatest = 0;
+        while (input >= 0) {
             input = stdin.nextInt();
-            if (input > 0)
-                sum += input;
+            if (input > greatest)
+                greatest = input;
         }
-        System.out.println(sum);
+        System.out.println(greatest);
     }
 }
