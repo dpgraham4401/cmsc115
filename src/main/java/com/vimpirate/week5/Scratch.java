@@ -8,13 +8,18 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int height = 5; // Example height, you can change this value as needed
+        long totalElevation = 0;
+        long step = 1;
         int count = 0;
 
         do {
-            System.out.println('o');
+            totalElevation += step;
+            step *= 2;
             count++;
-        } while (count < height);
+        } while (count < 50);
+
+        System.out.println("Total elevation gain over 50 steps: " + totalElevation + " meters");
     }
+
 
 }
