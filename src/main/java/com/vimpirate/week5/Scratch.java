@@ -1,5 +1,7 @@
 package com.vimpirate.week5;
 
+import java.util.Scanner;
+
 /**
  * class I use for testing code snippets
  *
@@ -8,9 +10,14 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int count = 0;
-        while (count++ < 10) {
-            System.out.println("Welcome to Java");
+        Scanner stdin = new Scanner(System.in);
+        int input;
+        int sum = 0;
+        while (sum < 100) {
+            input = stdin.nextInt();
+            if (input > 0)
+                sum += input;
         }
+        System.out.println(sum);
     }
 }
