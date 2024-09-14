@@ -12,12 +12,12 @@ public class Scratch {
         int item = 0;
         do {
             item++;
+            if (sum >= 4)
+                continue;
             sum += item;
-            if (sum > 4)
-                break;
         }
         while (item < 5);
-        System.out.println("item = " + item + " sum = " + sum);
+        System.out.println("sum = " + sum);
     }
 
 }
