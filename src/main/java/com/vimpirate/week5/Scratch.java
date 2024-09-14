@@ -1,7 +1,5 @@
 package com.vimpirate.week5;
 
-import java.util.Scanner;
-
 /**
  * class I use for testing code snippets
  *
@@ -10,21 +8,16 @@ import java.util.Scanner;
 public class Scratch {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int sum = 0;
-        StringBuilder textEntries = new StringBuilder();
-
-        while (input.hasNextLine()) {
-            String line = input.nextLine();
-            try {
-                int number = Integer.parseInt(line);
-                sum += number;
-            } catch (NumberFormatException e) {
-                textEntries.append(line);
+        int count = 0;
+        do {
+            if (count % 11 == 0) {
+                System.out.println("Good-bye, World!");
+            } else {
+                System.out.println("Hello, World!");
             }
-        }
+            count++;
+        } while (count < 50);
 
-        System.out.println(sum + "," + textEntries.toString());
     }
 
 }
