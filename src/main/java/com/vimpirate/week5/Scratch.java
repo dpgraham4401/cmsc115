@@ -8,16 +8,13 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
+        int height = 5; // Example height, you can change this value as needed
         int count = 0;
-        do {
-            if (count % 11 == 0) {
-                System.out.println("Good-bye, World!");
-            } else {
-                System.out.println("Hello, World!");
-            }
-            count++;
-        } while (count < 50);
 
+        do {
+            System.out.println('o');
+            count++;
+        } while (count < height);
     }
 
 }
