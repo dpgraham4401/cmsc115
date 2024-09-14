@@ -8,11 +8,16 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int y = 0;
-        for (int i = 0; i < 10; ++i) {
-            y += 1;
+        int sum = 0;
+        int item = 0;
+        do {
+            item++;
+            sum += item;
+            if (sum > 4)
+                break;
         }
-        System.out.println(y);
+        while (item < 5);
+        System.out.println("item = " + item + " sum = " + sum);
     }
 
 }
