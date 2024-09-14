@@ -8,14 +8,13 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int totalPoints = 0;
+        int n = 50; // Example value for n, you can change it as needed
 
-        for (int level = 1; level <= 20; level++) {
-            int pointsForLevel = level * level * level; // level^2 * level
-            totalPoints += pointsForLevel;
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 10 == 1) {
+                System.out.println(i);
+            }
         }
-
-        System.out.println("Total points earned from the first 20 levels: " + totalPoints);
 
     }
 
