@@ -1,7 +1,5 @@
 package com.vimpirate.week5;
 
-import java.util.Scanner;
-
 /**
  * class I use for testing code snippets
  *
@@ -10,26 +8,16 @@ import java.util.Scanner;
 public class Scratch {
 
     public static void main(String[] args) {
-        Scanner stdin = new Scanner(System.in);
+        int count = 0;
 
-        // Read the starting number from the user
-        System.out.print("Enter the starting number: ");
-        int un = stdin.nextInt();
-        int counter = 0;
-
-        // Print the initial value
-        System.out.println("u" + counter + " = " + un);
-
-        // Apply the Collatz sequence
         do {
-            if (un % 2 == 0) {
-                un /= 2;
+            if ((count + 1) % 11 == 0) {
+                System.out.println("Good-bye, World!");
             } else {
-                un = un * 3 + 1;
+                System.out.println("Hello, World!");
             }
-            counter++;
-            System.out.println("u" + counter + " = " + un);
-        } while (un != 1);
+            count++;
+        } while (count < 50);
     }
 
 }
