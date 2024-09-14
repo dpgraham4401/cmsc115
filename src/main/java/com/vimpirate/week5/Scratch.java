@@ -8,16 +8,15 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        int count = 0;
+        int totalPoints = 0;
 
-        do {
-            if ((count + 1) % 11 == 0) {
-                System.out.println("Good-bye, World!");
-            } else {
-                System.out.println("Hello, World!");
-            }
-            count++;
-        } while (count < 50);
+        for (int level = 1; level <= 20; level++) {
+            int pointsForLevel = level * level * level; // level^2 * level
+            totalPoints += pointsForLevel;
+        }
+
+        System.out.println("Total points earned from the first 20 levels: " + totalPoints);
+
     }
 
 }
