@@ -1,5 +1,7 @@
 package com.vimpirate.week5;
 
+import java.util.Scanner;
+
 /**
  * class I use for testing code snippets
  *
@@ -8,18 +10,26 @@ package com.vimpirate.week5;
 public class Scratch {
 
     public static void main(String[] args) {
-        long totalElevation = 0;
-        long step = 1;
-        int count = 0;
+        Scanner stdin = new Scanner(System.in);
 
+        // Read the starting number from the user
+        System.out.print("Enter the starting number: ");
+        int un = stdin.nextInt();
+        int counter = 0;
+
+        // Print the initial value
+        System.out.println("u" + counter + " = " + un);
+
+        // Apply the Collatz sequence
         do {
-            totalElevation += step;
-            step *= 2;
-            count++;
-        } while (count < 50);
-
-        System.out.println("Total elevation gain over 50 steps: " + totalElevation + " meters");
+            if (un % 2 == 0) {
+                un /= 2;
+            } else {
+                un = un * 3 + 1;
+            }
+            counter++;
+            System.out.println("u" + counter + " = " + un);
+        } while (un != 1);
     }
-
 
 }
